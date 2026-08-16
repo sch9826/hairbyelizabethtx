@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f1eadf">
+  <meta name="description" content="Hair by Elizabeth Texas specializes in transformative cuts, lived-in blonding, and special-event styling across Texas.">
+  <meta property="og:title" content="Hair by Elizabeth Texas">
+  <meta property="og:description" content="Transformative cuts, lived-in blonding, and special-event styling—shaped around you.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hairbyelizabethtx.com/">
+  <meta property="og:image" content="https://hairbyelizabethtx.com/assets/portfolio/hero-lived-in-blonde.webp">
+  <meta property="og:image:alt" content="Dimensional lived-in blonde styled in polished waves by Elizabeth">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://hairbyelizabethtx.com/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23641f32'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-size='40' font-style='italic' fill='%23f1eadf'%3EE%3C/text%3E%3C/svg%3E">
+  <title>Hair by Elizabeth Texas — Cuts, Blonding & Event Styling</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f1eadf;
+      --paper-2: #e5d8c7;
+      --ink: #201b18;
+      --muted: #6f625a;
+      --wine: #641f32;
+      --wine-deep: #36121e;
+      --rose: #c27c78;
+      --sage: #8c9278;
+      --line: rgba(32, 27, 24, .18);
+      --serif: "Instrument Serif", Georgia, serif;
+      --sans: "DM Sans", system-ui, sans-serif;
+      --ease: cubic-bezier(.22, 1, .36, 1);
+      --pad: clamp(1.25rem, 3.8vw, 4.75rem);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--paper); }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--sans);
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    body.menu-open { overflow: hidden; }
+    ::selection { color: var(--paper); background: var(--wine); }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    img { display: block; width: 100%; }
+    :focus-visible { outline: 2px solid var(--wine); outline-offset: 5px; }
+
+    .skip-link {
+      position: fixed;
+      top: .75rem;
+      left: .75rem;
+      z-index: 100;
+      padding: .8rem 1rem;
+      background: var(--paper);
+      transform: translateY(-150%);
+      transition: transform .2s;
+    }
+    .skip-link:focus { transform: none; }
+
+    .grain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 90;
+      opacity: .045;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.85'/%3E%3C/svg%3E");
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      font-size: .7rem;
+      line-height: 1;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .eyebrow::before { content: ""; width: 2.2rem; height: 1px; background: currentColor; }
+
+    .nav {
+      position: fixed;
+      z-index: 80;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5.4rem;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 0 var(--pad);
+      color: #fff;
+      mix-blend-mode: difference;
+    }
+    .brand {
+      justify-self: start;
+      display: inline-flex;
+      flex-direction: column;
+      line-height: .86;
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      letter-spacing: -.02em;
+    }
+    .brand small {
+      font-family: var(--sans);
+      margin-top: .35rem;
+      font-size: .5rem;
+      letter-spacing: .23em;
+      text-transform: uppercase;
+    }
+    .nav-links { display: flex; align-items: center; gap: 2rem; font-size: .74rem; text-transform: uppercase; letter-spacing: .12em; }
+    .nav-links a { position: relative; }
+    .nav-links a::after { content: ""; position: absolute; left: 0; bottom: -.4rem; width: 100%; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform .45s var(--ease); }
+    .nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
+    .nav-cta { justify-self: end; display: inline-flex; align-items: center; gap: .6rem; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
+    .nav-cta span { width: .42rem; height: .42rem; border-radius: 50%; background: currentColor; animation: pulse 2s ease-in-out infinite; }
+    .menu-button { display: none; justify-self: end; border: 0; background: none; color: inherit; padding: .8rem 0 .8rem .8rem; text-transform: uppercase; font-size: .68rem; letter-spacing: .14em; }
+    .mobile-menu { display: none; }
+
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      grid-template-columns: 43% 57%;
+      background: var(--wine-deep);
+      color: #f7f1e9;
+      position: relative;
+      isolation: isolate;
+    }
+    .hero-copy {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 9rem var(--pad) clamp(3rem, 7vh, 6rem);
+    }
+    .hero-copy .eyebrow { margin-bottom: 2rem; color: #d9c7bc; }
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(4.3rem, 9vw, 10.5rem);
+      font-weight: 400;
+      line-height: .76;
+      letter-spacing: -.055em;
+      margin: 0;
+    }
+    h1 span { display: block; }
+    h1 .script { margin-left: .46em; color: #d79a92; font-style: italic; }
+    .hero-intro {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      align-items: end;
+      gap: 1rem;
+      margin-top: clamp(2.3rem, 6vh, 5rem);
+      border-top: 1px solid rgba(255,255,255,.25);
+      padding-top: 1.2rem;
+    }
+    .hero-intro p { margin: 0; color: #e3d8d0; line-height: 1.55; font-size: clamp(.9rem, 1.2vw, 1.06rem); max-width: 29rem; }
+    .scroll-note { font-size: .64rem; text-transform: uppercase; letter-spacing: .15em; color: #bba9a1; }
+    .hero-visual { position: relative; min-height: 100svh; overflow: hidden; }
+    .hero-visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(54,18,30,.3), transparent 20%), linear-gradient(0deg, rgba(20,10,13,.25), transparent 45%); pointer-events: none; }
+    .hero-image { height: 100%; object-fit: cover; object-position: 48% center; filter: saturate(.78) contrast(1.04); transform: scale(1.03); }
+    .hero-stamp {
+      position: absolute;
+      right: var(--pad);
+      bottom: 3.5rem;
+      z-index: 2;
+      width: 9rem;
+      height: 9rem;
+      border: 1px solid rgba(255,255,255,.6);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      transform: rotate(8deg);
+    }
+    .hero-stamp svg { width: 86%; height: 86%; animation: spin 22s linear infinite; }
+    .hero-stamp b { position: absolute; font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 1.65rem; }
+
+    .marquee { overflow: hidden; border-bottom: 1px solid var(--line); background: var(--paper); padding: 1.5rem 0 1.35rem; }
+    .marquee-track { display: flex; width: max-content; animation: marquee 26s linear infinite; }
+    .marquee-set { display: flex; align-items: center; }
+    .marquee span { white-space: nowrap; font-family: var(--serif); font-size: clamp(1.8rem, 3.4vw, 3.2rem); font-style: italic; }
+    .marquee i { display: inline-block; width: .5rem; height: .5rem; background: var(--wine); border-radius: 50%; margin: 0 2.2rem; }
+
+    section { position: relative; }
+    .manifesto { padding: clamp(7rem, 14vw, 13rem) var(--pad); }
+    .manifesto-grid { display: grid; grid-template-columns: 1fr 3fr; gap: 4vw; }
+    .manifesto .eyebrow { margin-top: .85rem; }
+    .manifesto h2 {
+      margin: 0;
+      max-width: 69rem;
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(3.7rem, 7.3vw, 8.4rem);
+      line-height: .92;
+      letter-spacing: -.045em;
+      text-wrap: balance;
+    }
+    .manifesto h2 em { color: var(--wine); font-weight: inherit; }
+    .manifesto-foot { grid-column: 2; display: grid; grid-template-columns: 1fr 1fr; margin-top: 4rem; gap: 2rem; max-width: 50rem; }
+    .manifesto-foot p { margin: 0; line-height: 1.7; color: var(--muted); }
+
+    .services { background: var(--wine); color: #f6eee8; padding: clamp(6rem, 11vw, 10rem) var(--pad); overflow: hidden; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 5rem; }
+    .section-head h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(3.8rem, 7vw, 7.5rem); line-height: .85; letter-spacing: -.04em; margin: 0; }
+    .section-head p { max-width: 25rem; line-height: 1.65; color: #d8c2be; margin: 0; }
+    .service-list { border-top: 1px solid rgba(255,255,255,.3); }
+    .service-item { position: relative; display: grid; grid-template-columns: 5rem 1fr minmax(15rem, 26rem) 3rem; gap: 2rem; align-items: center; padding: 2.2rem 0; border-bottom: 1px solid rgba(255,255,255,.3); transition: padding .5s var(--ease); isolation: isolate; }
+    .service-item::before { content: ""; position: absolute; inset: 0 calc(var(--pad) * -1); background: #f0d8cd; transform: scaleY(0); transform-origin: bottom; transition: transform .55s var(--ease); z-index: -1; }
+    .service-item:hover { color: var(--wine-deep); padding-left: 1rem; padding-right: 1rem; }
+    .service-item:hover::before { transform: scaleY(1); transform-origin: top; }
+    .service-number { font-size: .65rem; letter-spacing: .15em; opacity: .7; }
+    .service-title { font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 5.3rem); line-height: .9; }
+    .service-copy { line-height: 1.55; font-size: .93rem; opacity: .78; }
+    .service-arrow { width: 2.6rem; height: 2.6rem; border: 1px solid currentColor; border-radius: 50%; display: grid; place-items: center; transition: transform .5s var(--ease); }
+    .service-item:hover .service-arrow { transform: rotate(45deg); }
+
+    .service-menu { padding: clamp(6rem, 11vw, 11rem) var(--pad); background: #f7f1e9; }
+    .menu-head { display: grid; grid-template-columns: 1.4fr 1fr; gap: 6vw; align-items: end; margin-bottom: clamp(3.5rem, 7vw, 6.5rem); }
+    .menu-head h2 { margin: 0; font-family: var(--serif); font-size: clamp(4.2rem, 8vw, 8.8rem); line-height: .82; letter-spacing: -.05em; font-weight: 400; }
+    .menu-head h2 em { display: block; margin-left: .65em; color: var(--wine); font-weight: inherit; }
+    .menu-head p { max-width: 29rem; margin: 0; color: var(--muted); line-height: 1.7; }
+    .menu-groups { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 6vw, 7rem); }
+    .menu-group h3 { margin: 0 0 1.25rem; font-size: .7rem; font-weight: 500; text-transform: uppercase; letter-spacing: .18em; color: var(--wine); }
+    .price-list { margin: 0; border-top: 1px solid var(--line); }
+    .price-row { display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: start; padding: 1.25rem 0; border-bottom: 1px solid var(--line); }
+    .price-row dt { font-family: var(--serif); font-size: clamp(1.65rem, 2.4vw, 2.45rem); line-height: 1; }
+    .price-row dd { margin: .15rem 0 0; font-size: .68rem; font-weight: 500; text-transform: uppercase; letter-spacing: .13em; white-space: nowrap; color: var(--muted); }
+    .price-row small { display: block; margin-top: .55rem; max-width: 27rem; color: var(--muted); font-family: var(--sans); font-size: .78rem; line-height: 1.5; }
+    .group-note { margin: 1rem 0 0; padding-left: 1rem; border-left: 2px solid var(--rose); color: var(--muted); font-size: .76rem; line-height: 1.55; }
+    .consultation { margin-top: clamp(3rem, 6vw, 5.5rem); padding: clamp(1.5rem, 3.5vw, 3rem); background: var(--wine-deep); color: var(--paper); display: grid; grid-template-columns: auto 1fr auto; gap: 2rem; align-items: center; }
+    .consultation-mark { width: 4.5rem; height: 4.5rem; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.45); border-radius: 50%; font-family: var(--serif); font-size: 2rem; font-style: italic; }
+    .consultation strong { display: block; font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 3rem); font-weight: 400; line-height: 1; }
+    .consultation p { margin: .55rem 0 0; color: #cdbec0; font-size: .82rem; line-height: 1.55; }
+    .consultation a { padding-bottom: .35rem; border-bottom: 1px solid currentColor; font-size: .68rem; text-transform: uppercase; letter-spacing: .14em; white-space: nowrap; }
+    .menu-note { margin: 1.25rem 0 0; color: var(--muted); font-size: .72rem; line-height: 1.55; }
+
+    .gallery { padding: clamp(6rem, 11vw, 11rem) var(--pad); }
+    .gallery-top { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: end; margin-bottom: 5rem; }
+    .gallery-top h2 { margin: 0; font-family: var(--serif); font-size: clamp(3.8rem, 7vw, 7.7rem); line-height: .86; font-weight: 400; letter-spacing: -.04em; }
+    .gallery-top p { max-width: 27rem; justify-self: end; color: var(--muted); line-height: 1.7; margin: 0; }
+    .gallery-grid { display: grid; grid-template-columns: 1.05fr .72fr; gap: clamp(1rem, 2.5vw, 2.4rem); align-items: start; }
+    .gallery-stack { display: grid; gap: clamp(1rem, 2.5vw, 2.4rem); padding-top: 11vw; }
+    .photo-card { position: relative; overflow: hidden; background: var(--paper-2); }
+    .photo-card.tall { aspect-ratio: .78; }
+    .photo-card.wide { aspect-ratio: 1.25; }
+    .photo-card.square { aspect-ratio: 1; }
+    .photo-card img { height: 112%; object-fit: cover; filter: saturate(.72); transition: filter .8s ease, transform 1.2s var(--ease); }
+    .photo-card:hover img { filter: saturate(1); transform: scale(1.035); }
+    .photo-meta { display: flex; justify-content: space-between; align-items: center; padding: .9rem 0 0; font-size: .66rem; text-transform: uppercase; letter-spacing: .15em; color: var(--muted); }
+
+    .transformations { background: var(--paper-2); padding: clamp(6rem, 11vw, 11rem) var(--pad); }
+    .transform-head { display: grid; grid-template-columns: 1.35fr 1fr; gap: 5vw; align-items: end; margin-bottom: 4rem; }
+    .transform-head h2 { margin: 0; font-family: var(--serif); font-size: clamp(4rem, 7.5vw, 8rem); line-height: .86; letter-spacing: -.045em; font-weight: 400; }
+    .transform-head h2 em { color: var(--wine); font-weight: inherit; }
+    .transform-head p { max-width: 29rem; color: var(--muted); line-height: 1.7; margin: 0; }
+    .transform-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 2.2vw, 2.2rem); }
+    .transform-card { margin: 0; }
+    .transform-image { aspect-ratio: 1; overflow: hidden; background: #171313; }
+    .transform-image img { width: 100%; height: 100%; object-fit: contain; transition: transform 1s var(--ease); }
+    .transform-card:hover img { transform: scale(1.018); }
+    .transform-meta { display: flex; justify-content: space-between; gap: 1rem; padding-top: 1rem; border-top: 1px solid var(--line); margin-top: 1rem; }
+    .transform-meta strong { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; }
+    .transform-meta span { align-self: center; font-size: .63rem; text-transform: uppercase; letter-spacing: .14em; color: var(--muted); }
+
+    .promise { min-height: 92vh; background: var(--sage); color: #f6f2e9; display: grid; grid-template-columns: 1fr 1fr; }
+    .promise-copy { padding: clamp(6rem, 10vw, 10rem) var(--pad); display: flex; flex-direction: column; justify-content: space-between; }
+    .promise h2 { font-family: var(--serif); font-size: clamp(4rem, 7.5vw, 8.4rem); line-height: .83; letter-spacing: -.045em; font-weight: 400; margin: 2rem 0; }
+    .promise h2 em { font-weight: inherit; color: var(--wine-deep); }
+    .promise-copy p { max-width: 28rem; line-height: 1.7; margin: 0; color: #edf0e7; }
+    .promise-image { min-height: 70vh; overflow: hidden; }
+    .promise-image img { height: 100%; object-fit: cover; filter: sepia(.12) saturate(.75); }
+
+    .details { padding: clamp(7rem, 12vw, 12rem) var(--pad); }
+    .details-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 10vw; }
+    .details h2 { margin: 0; font-family: var(--serif); font-size: clamp(4rem, 7vw, 7.6rem); line-height: .88; letter-spacing: -.045em; font-weight: 400; }
+    .details h2 em { color: var(--rose); font-weight: inherit; }
+    .detail-list { border-top: 1px solid var(--line); }
+    .detail { display: grid; grid-template-columns: 2.5rem 1fr; gap: 1.5rem; padding: 1.8rem 0; border-bottom: 1px solid var(--line); }
+    .detail b { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; }
+    .detail h3 { font-size: .8rem; text-transform: uppercase; letter-spacing: .13em; margin: .25rem 0 .65rem; }
+    .detail p { margin: 0; color: var(--muted); line-height: 1.65; font-size: .92rem; }
+
+    .contact { min-height: 92vh; background: var(--ink); color: var(--paper); padding: clamp(6rem, 10vw, 10rem) var(--pad) 2rem; display: flex; flex-direction: column; justify-content: space-between; }
+    .contact-top { display: flex; justify-content: space-between; align-items: start; gap: 2rem; }
+    .contact-top p { max-width: 23rem; color: #bfb4ab; line-height: 1.65; margin: 0; }
+    .contact-title { margin: 4rem 0; }
+    .contact-title span { display: block; font-family: var(--serif); font-size: clamp(5rem, 14vw, 15rem); line-height: .7; letter-spacing: -.06em; }
+    .contact-title span:last-child { color: var(--rose); font-style: italic; margin-left: 18vw; }
+    .contact-action { display: inline-flex; justify-content: space-between; align-items: center; width: 100%; padding: 1.7rem 0; border-top: 1px solid rgba(255,255,255,.35); border-bottom: 1px solid rgba(255,255,255,.35); font-family: var(--serif); font-size: clamp(2rem, 4vw, 4rem); transition: padding .5s var(--ease), color .3s; }
+    .contact-action:hover { padding-left: 1.5rem; padding-right: 1.5rem; color: #e7aba4; }
+    .contact-action i { width: 3rem; height: 3rem; border-radius: 50%; border: 1px solid currentColor; display: grid; place-items: center; font-family: var(--sans); font-size: 1.2rem; font-style: normal; }
+    .footer { display: flex; justify-content: space-between; gap: 2rem; align-items: end; padding-top: 6rem; font-size: .62rem; text-transform: uppercase; letter-spacing: .13em; color: #9d918a; }
+    .footer-mark { font-family: var(--serif); text-transform: none; font-size: 1.5rem; color: var(--paper); letter-spacing: -.02em; }
+
+    .reveal { opacity: 0; transform: translateY(2.5rem); transition: opacity 1s var(--ease), transform 1s var(--ease); }
+    .reveal.in { opacity: 1; transform: none; }
+
+    @keyframes marquee { to { transform: translateX(-50%); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes pulse { 50% { opacity: .3; transform: scale(.7); } }
+
+    @media (max-width: 900px) {
+      .nav { grid-template-columns: 1fr 1fr; }
+      .nav-links, .nav-cta { display: none; }
+      .menu-button { display: block; }
+      .nav { mix-blend-mode: normal; color: #fff; text-shadow: 0 1px 18px rgba(20, 8, 12, .72); background: rgba(54,18,30,.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 1px 0 rgba(255,255,255,.08); }
+      .mobile-menu { position: fixed; inset: 0; z-index: 75; background: var(--wine-deep); color: var(--paper); padding: 8rem var(--pad) 3rem; display: flex; flex-direction: column; justify-content: space-between; transform: translateY(-105%); transition: transform .75s var(--ease); }
+      .mobile-menu.open { transform: none; }
+      .mobile-menu nav { display: flex; flex-direction: column; }
+      .mobile-menu a { font-family: var(--serif); font-size: clamp(3.5rem, 14vw, 6rem); line-height: .95; border-bottom: 1px solid rgba(255,255,255,.2); padding: .35rem 0; }
+      .mobile-menu p { color: #bca8a6; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; }
+      .hero { grid-template-columns: 1fr; min-height: 100svh; }
+      .hero-copy { min-height: 100svh; grid-row: 1; background: linear-gradient(0deg, rgba(38,13,21,.9), rgba(38,13,21,.12) 58%, rgba(38,13,21,.52)); padding-top: 8rem; }
+      .hero-visual { position: absolute; inset: 0; min-height: 100%; z-index: -1; }
+      .hero-image { object-position: 58% center; }
+      .hero-intro { grid-template-columns: 1fr; }
+      .scroll-note { display: none; }
+      .hero-stamp { width: 6.5rem; height: 6.5rem; right: 1.2rem; bottom: 2rem; }
+      .manifesto-grid { grid-template-columns: 1fr; }
+      .manifesto-foot { grid-column: auto; grid-template-columns: 1fr; margin-top: 2rem; }
+      .section-head { display: grid; }
+      .service-item { grid-template-columns: 2.5rem 1fr 2.5rem; gap: 1rem; }
+      .service-copy { grid-column: 2 / 4; max-width: 30rem; }
+      .menu-head, .menu-groups { grid-template-columns: 1fr; }
+      .consultation { grid-template-columns: auto 1fr; }
+      .consultation a { grid-column: 2; justify-self: start; }
+      .gallery-top { grid-template-columns: 1fr; }
+      .gallery-top p { justify-self: start; }
+      .transform-head { grid-template-columns: 1fr; }
+      .transform-grid { grid-template-columns: 1fr; }
+      .promise { grid-template-columns: 1fr; }
+      .promise-image { min-height: 65vh; }
+      .details-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: clamp(4rem, 23vw, 6.2rem); }
+      .hero-copy { padding-bottom: 2rem; }
+      .hero-intro { margin-top: 2rem; }
+      .hero-stamp { display: none; }
+      .manifesto, .services, .service-menu, .gallery, .transformations, .details { padding-top: 5.5rem; padding-bottom: 5.5rem; }
+      .manifesto h2 { font-size: clamp(3.2rem, 15.5vw, 5.2rem); }
+      .section-head { margin-bottom: 3rem; }
+      .service-item { padding: 1.6rem 0; }
+      .menu-head h2 em { margin-left: .25em; }
+      .price-row { gap: .75rem; }
+      .price-row dt { font-size: 1.65rem; }
+      .consultation { grid-template-columns: 1fr; gap: 1.2rem; }
+      .consultation a { grid-column: auto; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-stack { padding-top: 0; }
+      .promise-copy { min-height: 67vh; }
+      .promise-image { min-height: 55vh; }
+      .contact-top { flex-direction: column; }
+      .contact-title span { font-size: clamp(4.8rem, 25vw, 8rem); }
+      .contact-title span:last-child { margin-left: 8vw; }
+      .footer { align-items: start; flex-direction: column; }
+      .contact-action { font-size: 1.8rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+      .hero-image { transform: none !important; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Hair by Elizabeth Texas",
+    "description": "Transformative cuts, lived-in blonding, and special-event styling across Texas.",
+    "email": "hairbyelizabethtx@gmail.com",
+    "url": "https://hairbyelizabethtx.com/",
+    "areaServed": { "@type": "State", "name": "Texas" },
+    "knowsAbout": ["Transformative haircuts", "Lived-in blonding", "Highlights", "Special-event hairstyling", "Bridal hairstyling", "Makeup application", "Bridal makeup", "Hair color", "On-location beauty services"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav" aria-label="Primary navigation">
+    <a class="brand" href="#top" aria-label="Hair by Elizabeth Texas home">Hair by Elizabeth <small>Texas</small></a>
+    <nav class="nav-links" aria-label="Main links">
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#work">Work</a>
+    </nav>
+    <a class="nav-cta" href="#contact"><span></span> Inquire</a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Inquire</a>
+    </nav>
+    <p>On-location artistry · Texas</p>
+  </div>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <span class="eyebrow reveal">On-location artist · Texas</span>
+        <h1 class="reveal"><span>Hair by</span><span class="script">Elizabeth</span></h1>
+        <div class="hero-intro reveal">
+          <span class="scroll-note">Scroll to discover</span>
+          <p>Transformative cuts, lived-in blonding, and special-event styling—created with a keen eye for shape, tone, and movement.</p>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img class="hero-image" src="assets/portfolio/hero-lived-in-blonde.webp" alt="Dimensional lived-in blonde color and soft waves created by Elizabeth" fetchpriority="high">
+        <div class="hero-stamp">
+          <svg viewBox="0 0 100 100" aria-hidden="true">
+            <defs><path id="circle" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/></defs>
+            <text fill="currentColor" font-size="7.7" letter-spacing="2.3"><textPath href="#circle">CUT • COLOR • STYLE • TEXAS • </textPath></text>
+          </svg>
+          <b>E</b>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-label="Services">
+      <div class="marquee-track">
+        <div class="marquee-set"><span>Transformative Cuts</span><i></i><span>Lived-in Blonding</span><i></i><span>Special-event Styling</span><i></i></div>
+        <div class="marquee-set" aria-hidden="true"><span>Transformative Cuts</span><i></i><span>Lived-in Blonding</span><i></i><span>Special-event Styling</span><i></i></div>
+      </div>
+    </div>
+
+    <section class="manifesto" id="about">
+      <div class="manifesto-grid">
+        <span class="eyebrow reveal">The approach</span>
+        <h2 class="reveal">Beauty should feel like <em>you</em>—only more considered.</h2>
+        <div class="manifesto-foot reveal">
+          <p>Every look begins with the person, not the trend. Texture, tone, setting, and comfort all shape the final result.</p>
+          <p>Based in Texas and available for transformative cuts, dimensional color, special-event styling, and select on-location projects.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="section-head reveal">
+        <h2>What I do</h2>
+        <p>Individual services or a complete, coordinated look—created with care and adapted to the setting.</p>
+      </div>
+      <div class="service-list">
+        <article class="service-item reveal">
+          <span class="service-number">01</span>
+          <span class="service-title">Transformative cuts</span>
+          <p class="service-copy">Purposeful shape changes—from refined pixies to complete restyles—built around face shape, texture, and daily life.</p>
+          <span class="service-arrow" aria-hidden="true">↗</span>
+        </article>
+        <article class="service-item reveal">
+          <span class="service-number">02</span>
+          <span class="service-title">Lived-in blonding</span>
+          <p class="service-copy">Dimensional blonde and considered tonal work with brightness where it matters and a softer, more natural grow-out.</p>
+          <span class="service-arrow" aria-hidden="true">↗</span>
+        </article>
+        <article class="service-item reveal">
+          <span class="service-number">03</span>
+          <span class="service-title">Special-event styling</span>
+          <p class="service-copy">Braided updos, polished waves, soft texture, and enduring finishing designed to move beautifully through the event.</p>
+          <span class="service-arrow" aria-hidden="true">↗</span>
+        </article>
+        <article class="service-item reveal">
+          <span class="service-number">04</span>
+          <span class="service-title">Dimensional color</span>
+          <p class="service-copy">Rich tonal shifts, expressive color, and balanced dimension tailored to the cut, condition, and desired upkeep.</p>
+          <span class="service-arrow" aria-hidden="true">↗</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="service-menu" id="menu" aria-labelledby="menu-title">
+      <div class="menu-head reveal">
+        <h2 id="menu-title">The service <em>menu.</em></h2>
+        <p>Thoughtful, tailored services for everyday shape, dimensional color, and the moments that call for something more. Listed prices are starting points.</p>
+      </div>
+      <div class="menu-groups">
+        <article class="menu-group reveal">
+          <h3>Cut + color</h3>
+          <dl class="price-list">
+            <div class="price-row"><dt>Full highlights</dt><dd>From $200</dd></div>
+            <div class="price-row"><dt>Partial highlights</dt><dd>From $150</dd></div>
+            <div class="price-row"><dt>Single-process color</dt><dd>From $80</dd></div>
+            <div class="price-row"><dt>Global bleach-out</dt><dd>From $200</dd></div>
+            <div class="price-row"><dt>Haircut + blow dry</dt><dd>From $75</dd></div>
+            <div class="price-row"><dt>Blow dry</dt><dd>From $40</dd></div>
+            <div class="price-row"><dt>Color correction<small>Quoted from your starting color and desired result.</small></dt><dd>Consultation</dd></div>
+          </dl>
+          <p class="group-note">All color services include toner or color gloss.</p>
+        </article>
+        <article class="menu-group reveal">
+          <h3>Occasion + makeup</h3>
+          <dl class="price-list">
+            <div class="price-row"><dt>Special-occasion styling</dt><dd>From $80</dd></div>
+            <div class="price-row"><dt>Bridal styling</dt><dd>From $100</dd></div>
+            <div class="price-row"><dt>Standard makeup<small>False lashes included.</small></dt><dd>From $60</dd></div>
+            <div class="price-row"><dt>Bridal makeup<small>False lashes included.</small></dt><dd>From $100</dd></div>
+          </dl>
+        </article>
+      </div>
+      <aside class="consultation reveal" aria-label="Complimentary consultation">
+        <span class="consultation-mark" aria-hidden="true">15</span>
+        <div><strong>Complimentary 15-minute consultation</strong><p>Start with your current hair, inspiration, date, and the result you have in mind.</p></div>
+        <a href="mailto:hairbyelizabethtx@gmail.com?subject=Complimentary%2015-minute%20consultation">Request a consultation ↗</a>
+      </aside>
+      <p class="menu-note">All listed amounts are starting prices. Final pricing is confirmed after service details and, when needed, a consultation.</p>
+    </section>
+
+    <section class="gallery" id="work">
+      <div class="gallery-top reveal">
+        <h2>Shape.<br>Light. Detail.</h2>
+        <p>Real work from Elizabeth's portfolio—transformative shape, dimensional color, lived-in texture, and occasion styling.</p>
+      </div>
+      <div class="gallery-grid">
+        <div>
+          <figure class="photo-card tall reveal">
+            <img data-parallax src="assets/portfolio/deep-wine-color.webp" alt="Deep wine dimensional color created by Elizabeth" loading="lazy">
+          </figure>
+          <div class="photo-meta"><span>Dimensional color</span><span>01</span></div>
+        </div>
+        <div class="gallery-stack">
+          <div>
+            <figure class="photo-card square reveal">
+              <img data-parallax src="assets/portfolio/event-updo-profile.webp" alt="Special-event braided updo in profile" loading="lazy">
+            </figure>
+            <div class="photo-meta"><span>Special-event styling</span><span>02</span></div>
+          </div>
+          <div>
+            <figure class="photo-card wide reveal">
+              <img data-parallax src="assets/portfolio/dimensional-curls.webp" alt="Dimensional blonde curls styled by Elizabeth" loading="lazy">
+            </figure>
+            <div class="photo-meta"><span>Texture & finish</span><span>03</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="transformations" aria-labelledby="transform-title">
+      <div class="transform-head reveal">
+        <h2 id="transform-title">Before. After.<br><em>Entirely you.</em></h2>
+        <p>Proof lives in the transformation: stronger shape, more intentional tone, and a result designed to feel natural long after the appointment.</p>
+      </div>
+      <div class="transform-grid">
+        <figure class="transform-card reveal">
+          <div class="transform-image"><img src="assets/portfolio/pixie-before-after.webp" alt="Before and after of a long haircut transformed into a platinum pixie" loading="lazy"></div>
+          <figcaption class="transform-meta"><strong>Transformative pixie</strong><span>Before → after</span></figcaption>
+        </figure>
+        <figure class="transform-card reveal">
+          <div class="transform-image"><img src="assets/portfolio/blonde-before-after.webp" alt="Before and after of long hair transformed with soft lived-in blonde dimension" loading="lazy"></div>
+          <figcaption class="transform-meta"><strong>Lived-in blonde</strong><span>Before → after</span></figcaption>
+        </figure>
+        <figure class="transform-card reveal">
+          <div class="transform-image"><img src="assets/portfolio/lived-in-blonde-process.webp" alt="Multi-angle view of a dimensional blonde color transformation" loading="lazy"></div>
+          <figcaption class="transform-meta"><strong>Dimensional finish</strong><span>Process → result</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="promise">
+      <div class="promise-copy">
+        <span class="eyebrow reveal">The experience</span>
+        <h2 class="reveal">A calm chair.<br>A keen eye.<br><em>Your look.</em></h2>
+        <p class="reveal">Prepared, attentive, and never rushed. The goal is a look that belongs to you—not one that wears you.</p>
+      </div>
+      <div class="promise-image">
+        <img src="assets/portfolio/event-updo-back.webp" alt="Detailed rear view of a braided special-event updo" loading="lazy">
+      </div>
+    </section>
+
+    <section class="details">
+      <div class="details-grid">
+        <h2 class="reveal">From first idea to final <em>pin.</em></h2>
+        <div class="detail-list">
+          <article class="detail reveal">
+            <b>1</b><div><h3>Share the vision</h3><p>Tell me about the setting, timing, inspiration, and how you want the finished look to feel.</p></div>
+          </article>
+          <article class="detail reveal">
+            <b>2</b><div><h3>Shape the plan</h3><p>We align on services, location, preparation, and the practical details that make the day run smoothly.</p></div>
+          </article>
+          <article class="detail reveal">
+            <b>3</b><div><h3>Create the look</h3><p>I arrive prepared, build the look with intention, and finish it for comfort, longevity, and movement.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div>
+        <div class="contact-top reveal">
+          <span class="eyebrow">Now booking select projects</span>
+          <p>For appointment consultations and pricing, email <a href="mailto:hairbyelizabethtx@gmail.com"><u>hairbyelizabethtx@gmail.com</u></a> with your location, date, and desired services.</p>
+        </div>
+        <h2 class="contact-title reveal"><span>Let’s make</span><span>something beautiful.</span></h2>
+        <a class="contact-action reveal" href="mailto:hairbyelizabethtx@gmail.com?subject=Appointment%20consultation%20with%20Hair%20by%20Elizabeth"><span>Schedule a consultation</span><i aria-hidden="true">↗</i></a>
+      </div>
+      <footer class="footer">
+        <span class="footer-mark">Hair by Elizabeth Texas</span>
+        <span>Cuts · blonding · event styling</span>
+        <span>© <span id="year">2026</span> Elizabeth</span>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const reveals = document.querySelectorAll('.reveal');
+      if (reduced || !('IntersectionObserver' in window)) {
+        reveals.forEach(el => el.classList.add('in'));
+      } else {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: .12, rootMargin: '0px 0px -5% 0px' });
+        reveals.forEach(el => observer.observe(el));
+      }
+
+      const button = document.querySelector('.menu-button');
+      const menu = document.querySelector('.mobile-menu');
+      const closeMenu = () => {
+        menu.classList.remove('open');
+        menu.setAttribute('aria-hidden', 'true');
+        button.setAttribute('aria-expanded', 'false');
+        button.textContent = 'Menu';
+        document.body.classList.remove('menu-open');
+      };
+      button.addEventListener('click', () => {
+        const open = !menu.classList.contains('open');
+        menu.classList.toggle('open', open);
+        menu.setAttribute('aria-hidden', String(!open));
+        button.setAttribute('aria-expanded', String(open));
+        button.textContent = open ? 'Close' : 'Menu';
+        document.body.classList.toggle('menu-open', open);
+      });
+      menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+      window.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+
+      if (!reduced) {
+        const heroImage = document.querySelector('.hero-image');
+        const parallax = document.querySelectorAll('[data-parallax]');
+        let ticking = false;
+        const paint = () => {
+          const y = window.scrollY;
+          heroImage.style.transform = `scale(1.03) translateY(${Math.min(y * .065, 45)}px)`;
+          parallax.forEach(img => {
+            const rect = img.parentElement.getBoundingClientRect();
+            const center = rect.top + rect.height / 2 - window.innerHeight / 2;
+            img.style.transform = `translateY(${Math.max(-32, Math.min(32, center * -.035))}px) scale(1.035)`;
+          });
+          ticking = false;
+        };
+        window.addEventListener('scroll', () => {
+          if (!ticking) { requestAnimationFrame(paint); ticking = true; }
+        }, { passive: true });
+        paint();
+      }
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
